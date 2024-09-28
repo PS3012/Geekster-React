@@ -6,6 +6,7 @@ import MainPanel from './pages/geek-food/MainPanel'
 import Home from './pages/geek-food/Home'
 import Quote from './pages/geek-food/Quote'
 import ParagraphGenerator from './pages/paragraphGenerator/ParagraphGenerator'
+import EducationPlanner from './pages/educationPlanner/EducationPlanner'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='quote' element={<Quote />} />
         </Route>
         <Route path='/paragraph-generator' element={<ParagraphGenerator />} />
+        <Route path='/education-planner' element={<EducationPlanner />} />
       </Routes>
       <Toaster />
 

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
 function MainHome() {
      const apps = [
           { link: "/geek-food", name: "Geek Food App" },
-          { link: "/paragraph-generator", name: "Paragraph Generator" }
+          { link: "/paragraph-generator", name: "Paragraph Generator" },
+          { link: "/education-planner", name: "Education Planner" },
      ]
      return (
           <>
