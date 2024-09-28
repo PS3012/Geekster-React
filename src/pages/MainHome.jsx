@@ -6,6 +6,7 @@ function MainHome() {
           { link: "/paragraph-generator", name: "Paragraph Generator" },
           { link: "/education-planner", name: "Education Planner" },
           { link: "/grocery-bud", name: "Grocery Bud" },
+          { link: "/shopping-cart", name: "Shopping Cart" },
      ]
      return (
           <>
