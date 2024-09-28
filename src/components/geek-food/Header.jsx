@@ -1,14 +1,10 @@
 import { CodesandboxIcon, Menu01Icon, MultiplicationSignCircleIcon } from "hugeicons-react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 function Header() {
      const APP_NAME = "/geek-food"
      const [mobileMenu, setMobileMenu] = useState(false)
-     useEffect(() => {
-          document.title = "Geek Foods"
-          return () => document.title = "React Project"
-     }, [])
      return (
           <>
 

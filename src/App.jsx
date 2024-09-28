@@ -1,10 +1,12 @@
 
 import { Route, Routes } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import MainHome from './pages/MainHome'
 import MainPanel from './pages/geek-food/MainPanel'
 import Home from './pages/geek-food/Home'
-import './App.css'
 import Quote from './pages/geek-food/Quote'
-import MainHome from './pages/MainHome'
+import ParagraphGenerator from './pages/paragraphGenerator/ParagraphGenerator'
+import './App.css'
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
           <Route path='' element={<Home />} />
           <Route path='quote' element={<Quote />} />
         </Route>
+        <Route path='/paragraph-generator' element={<ParagraphGenerator />} />
       </Routes>
+      <Toaster />
 
     </>
   )
