@@ -5,6 +5,7 @@ function MainHome() {
           { link: "/geek-food", name: "Geek Food App" },
           { link: "/paragraph-generator", name: "Paragraph Generator" },
           { link: "/education-planner", name: "Education Planner" },
+          { link: "/grocery-bud", name: "Grocery Bud" },
      ]
      return (
           <>

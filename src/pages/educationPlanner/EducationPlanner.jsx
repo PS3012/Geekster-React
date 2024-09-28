@@ -6,10 +6,12 @@ function EducationPlanner() {
      const [plannerList, setPlannerList] = useState([]);
      const [plannerItem, setPlannerItem] = useState({ subject: "", hours: "" });
      useEffect(() => {
-          const savedPlannerList = localStorage.getItem("savedPlannerList", [])
+          document.title = "Education Planner"
+          const savedPlannerList = localStorage.getItem("savedPlannerList")
           if (savedPlannerList) {
                setPlannerList(JSON.parse(savedPlannerList))
           }
+          return () => document.title = "React Project"
      }, [])
      const handleAddPlannerList = () => {
           const { subject, hours } = plannerItem;
@@ -36,14 +38,14 @@ function EducationPlanner() {
                               type="text"
                               value={plannerItem.subject}
                               onChange={(e) => setPlannerItem({ ...plannerItem, subject: e.target.value })}
-                              className="col-span-3 border rounded outline-none hover:border-rose-600 px-3"
+                              className="col-span-3 border rounded outline-none focus:border-rose-600 px-3"
                               placeholder="Subject"
                          />
                          <input
                               type="number"
                               value={plannerItem.hours}
                               onChange={(e) => setPlannerItem({ ...plannerItem, hours: e.target.value })}
-                              className="border rounded outline-none hover:border-rose-600 px-3"
+                              className="border rounded outline-none focus:border-rose-600 px-3"
                               placeholder="Hours"
                          />
                          <button className="p-2 text-white rounded bg-rose-600 hover:bg-black" onClick={handleAddPlannerList}>

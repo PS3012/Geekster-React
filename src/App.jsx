@@ -7,6 +7,7 @@ import Home from './pages/geek-food/Home'
 import Quote from './pages/geek-food/Quote'
 import ParagraphGenerator from './pages/paragraphGenerator/ParagraphGenerator'
 import EducationPlanner from './pages/educationPlanner/EducationPlanner'
+import GroceryBud from './pages/groceryBud/GroceryBud'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         </Route>
         <Route path='/paragraph-generator' element={<ParagraphGenerator />} />
         <Route path='/education-planner' element={<EducationPlanner />} />
+        <Route path='/grocery-bud' element={<GroceryBud />} />
       </Routes>
       <Toaster />
 
