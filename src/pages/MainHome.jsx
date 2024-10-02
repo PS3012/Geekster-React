@@ -7,6 +7,7 @@ function MainHome() {
           { link: "/education-planner", name: "Education Planner" },
           { link: "/grocery-bud", name: "Grocery Bud" },
           { link: "/shopping-cart", name: "Shopping Cart" },
+          { link: "/bank-dashboard", name: "Bank Dashboard" },
      ]
      return (
           <>
@@ -14,7 +15,7 @@ function MainHome() {
                <div className="p-4 sm:p-6 md:p-10 lg:p-16">
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                          {apps.map((item, index) =>
-                              <Link to={item.link} className="border rounded-lg p-4 mb-2 hover:bg-gray-100" key={index}>
+                              <Link to={item.link} className="border rounded-lg p-4 hover:bg-gray-100" key={index}>
                                    <div className="text-xl md:text-2xl font-bold">{item.name}</div>
                                    <div className="text">
                                         {(item.desc && item.desc.trim() !== "") ? item.desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, illum."}

@@ -1,3 +1,11 @@
 .h-100vh-68 {
     height: calc(100vh - 68px);
 }
+
+.single-thumb .range-slider__thumb[data-lower] {
+    width: 0;
+}
+
+.single-thumb .range-slider__range {
+    border-radius: 6px;
+}

@@ -9,6 +9,7 @@ import ParagraphGenerator from './pages/paragraphGenerator/ParagraphGenerator'
 import EducationPlanner from './pages/educationPlanner/EducationPlanner'
 import GroceryBud from './pages/groceryBud/GroceryBud'
 import ShoppingCart from './pages/shoppingCart/ShoppingCart'
+import BankDashboard from './pages/bankDashboard/BankDashboard'
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/education-planner' element={<EducationPlanner />} />
         <Route path='/grocery-bud' element={<GroceryBud />} />
         <Route path='/shopping-cart' element={<ShoppingCart />} />
+        <Route path='/bank-dashboard' element={<BankDashboard />} />
       </Routes>
       <Toaster />
 
