@@ -3,7 +3,10 @@ import { useState } from 'react'
 function SliderInput(_props) {
      const [value, setValue] = useState(_props.startValue)
      const handleChange = (e) => {
-          setValue(e.target.value)
+          const value = e.target.value
+          setValue(value)
+          _props.updaterFunc(value)
+
      }
      return (
           <>
