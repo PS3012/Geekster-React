@@ -8,6 +8,7 @@ function MainHome() {
           { link: "/grocery-bud", name: "Grocery Bud" },
           { link: "/shopping-cart", name: "Shopping Cart" },
           { link: "/bank-dashboard", name: "Bank Dashboard" },
+          { link: "/directory-app", name: "Directory App" },
      ]
      return (
           <>

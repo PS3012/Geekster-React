@@ -10,6 +10,9 @@ import EducationPlanner from './pages/educationPlanner/EducationPlanner'
 import GroceryBud from './pages/groceryBud/GroceryBud'
 import ShoppingCart from './pages/shoppingCart/ShoppingCart'
 import BankDashboard from './pages/bankDashboard/BankDashboard'
+import DirectoryLayout from './pages/directoryApp/DirectoryLayout'
+import DirectoryApp from './pages/directoryApp/DirectoryApp'
+import RetrieveDirectory from './pages/directoryApp/RetrieveDirectory'
 import './App.css'
 
 function App() {
@@ -27,6 +30,10 @@ function App() {
         <Route path='/grocery-bud' element={<GroceryBud />} />
         <Route path='/shopping-cart' element={<ShoppingCart />} />
         <Route path='/bank-dashboard' element={<BankDashboard />} />
+        <Route path='/directory-app' element={<DirectoryLayout />}>
+          <Route path='' element={<DirectoryApp />} />
+          <Route path='retrieve' element={<RetrieveDirectory />} />
+        </Route>
       </Routes>
       <Toaster />
 
