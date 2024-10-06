@@ -9,6 +9,7 @@ function MainHome() {
           { link: "/shopping-cart", name: "Shopping Cart" },
           { link: "/bank-dashboard", name: "Bank Dashboard" },
           { link: "/directory-app", name: "Directory App" },
+          { link: "/text-translator", name: "Text Translator" },
      ]
      return (
           <>

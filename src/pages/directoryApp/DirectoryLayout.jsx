@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 import { NavLink, Outlet } from "react-router-dom"
 
 function DirectoryLayout() {
+     useEffect(() => {
+          document.title = "Directory App"
+          return () => document.title = "React Project"
+     }, [])
      return (
           <>
 

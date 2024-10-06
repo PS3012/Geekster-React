@@ -13,6 +13,7 @@ import BankDashboard from './pages/bankDashboard/BankDashboard'
 import DirectoryLayout from './pages/directoryApp/DirectoryLayout'
 import DirectoryApp from './pages/directoryApp/DirectoryApp'
 import RetrieveDirectory from './pages/directoryApp/RetrieveDirectory'
+import TextTranslator from './pages/textTranslator/TextTranslator'
 import './App.css'
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='' element={<DirectoryApp />} />
           <Route path='retrieve' element={<RetrieveDirectory />} />
         </Route>
+        <Route path='/text-translator' element={<TextTranslator />} />
       </Routes>
       <Toaster />
 
