@@ -10,6 +10,7 @@ function MainHome() {
           { link: "/bank-dashboard", name: "Bank Dashboard" },
           { link: "/directory-app", name: "Directory App" },
           { link: "/text-translator", name: "Text Translator" },
+          { link: "/image-generator", name: "Image Generator" },
      ]
      return (
           <>
