@@ -11,6 +11,7 @@ function MainHome() {
           { link: "/directory-app", name: "Directory App" },
           { link: "/text-translator", name: "Text Translator" },
           { link: "/image-generator", name: "Image Generator" },
+          { link: "/infinite-scroll", name: "Infinite Scroll" },
      ]
      return (
           <>

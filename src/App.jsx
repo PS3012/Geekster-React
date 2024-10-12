@@ -16,6 +16,7 @@ import RetrieveDirectory from './pages/directoryApp/RetrieveDirectory'
 import TextTranslator from './pages/textTranslator/TextTranslator'
 import './App.css'
 import ImageGenerator from './pages/imageGenerator/ImageGenerator'
+import InfiniteScroll from './pages/infiniteScroll/InfiniteScroll'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         </Route>
         <Route path='/text-translator' element={<TextTranslator />} />
         <Route path='/image-generator' element={<ImageGenerator />} />
+        <Route path='/infinite-scroll' element={<InfiniteScroll />} />
       </Routes>
       <Toaster />
 
