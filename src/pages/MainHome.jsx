@@ -12,6 +12,7 @@ function MainHome() {
           { link: "/text-translator", name: "Text Translator" },
           { link: "/image-generator", name: "Image Generator" },
           { link: "/infinite-scroll", name: "Infinite Scroll" },
+          { link: "/employee-management", name: "Employee Management" },
      ]
      return (
           <>

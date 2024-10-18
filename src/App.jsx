@@ -17,6 +17,8 @@ import TextTranslator from './pages/textTranslator/TextTranslator'
 import './App.css'
 import ImageGenerator from './pages/imageGenerator/ImageGenerator'
 import InfiniteScroll from './pages/infiniteScroll/InfiniteScroll'
+import Authentication from './pages/Authentication'
+import EmployeeManagement from './pages/employeeManagement/EmployeeManagement'
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
         <Route path='/text-translator' element={<TextTranslator />} />
         <Route path='/image-generator' element={<ImageGenerator />} />
         <Route path='/infinite-scroll' element={<InfiniteScroll />} />
+        <Route path='/employee-management' element={<EmployeeManagement />} />
+        <Route path='/auth' element={<Authentication />} />
       </Routes>
       <Toaster />
 
