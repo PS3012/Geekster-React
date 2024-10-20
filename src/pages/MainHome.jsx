@@ -13,6 +13,7 @@ function MainHome() {
           { link: "/image-generator", name: "Image Generator" },
           { link: "/infinite-scroll", name: "Infinite Scroll" },
           { link: "/employee-management", name: "Employee Management" },
+          { link: "/trello", name: "Trello" },
      ]
      return (
           <>

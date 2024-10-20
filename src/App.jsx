@@ -14,37 +14,42 @@ import DirectoryLayout from './pages/directoryApp/DirectoryLayout'
 import DirectoryApp from './pages/directoryApp/DirectoryApp'
 import RetrieveDirectory from './pages/directoryApp/RetrieveDirectory'
 import TextTranslator from './pages/textTranslator/TextTranslator'
-import './App.css'
 import ImageGenerator from './pages/imageGenerator/ImageGenerator'
 import InfiniteScroll from './pages/infiniteScroll/InfiniteScroll'
 import Authentication from './pages/Authentication'
 import EmployeeManagement from './pages/employeeManagement/EmployeeManagement'
+import Trello from './pages/Trello/Trello'
+import TrelloContextProvider from './components/context/TrelloContextProvider'
+import './App.css'
 
 function App() {
   return (
     <>
 
-      <Routes>
-        <Route path='/' element={<MainHome />} />
-        <Route path='/geek-food' element={<MainPanel />}>
-          <Route path='' element={<Home />} />
-          <Route path='quote' element={<Quote />} />
-        </Route>
-        <Route path='/paragraph-generator' element={<ParagraphGenerator />} />
-        <Route path='/education-planner' element={<EducationPlanner />} />
-        <Route path='/grocery-bud' element={<GroceryBud />} />
-        <Route path='/shopping-cart' element={<ShoppingCart />} />
-        <Route path='/bank-dashboard' element={<BankDashboard />} />
-        <Route path='/directory-app' element={<DirectoryLayout />}>
-          <Route path='' element={<DirectoryApp />} />
-          <Route path='retrieve' element={<RetrieveDirectory />} />
-        </Route>
-        <Route path='/text-translator' element={<TextTranslator />} />
-        <Route path='/image-generator' element={<ImageGenerator />} />
-        <Route path='/infinite-scroll' element={<InfiniteScroll />} />
-        <Route path='/employee-management' element={<EmployeeManagement />} />
-        <Route path='/auth' element={<Authentication />} />
-      </Routes>
+      <TrelloContextProvider>
+        <Routes>
+          <Route path='/' element={<MainHome />} />
+          <Route path='/geek-food' element={<MainPanel />}>
+            <Route path='' element={<Home />} />
+            <Route path='quote' element={<Quote />} />
+          </Route>
+          <Route path='/paragraph-generator' element={<ParagraphGenerator />} />
+          <Route path='/education-planner' element={<EducationPlanner />} />
+          <Route path='/grocery-bud' element={<GroceryBud />} />
+          <Route path='/shopping-cart' element={<ShoppingCart />} />
+          <Route path='/bank-dashboard' element={<BankDashboard />} />
+          <Route path='/directory-app' element={<DirectoryLayout />}>
+            <Route path='' element={<DirectoryApp />} />
+            <Route path='retrieve' element={<RetrieveDirectory />} />
+          </Route>
+          <Route path='/text-translator' element={<TextTranslator />} />
+          <Route path='/image-generator' element={<ImageGenerator />} />
+          <Route path='/infinite-scroll' element={<InfiniteScroll />} />
+          <Route path='/employee-management' element={<EmployeeManagement />} />
+          <Route path='/trello' element={<Trello />} />
+          <Route path='/auth' element={<Authentication />} />
+        </Routes>
+      </TrelloContextProvider>
       <Toaster />
 
     </>
