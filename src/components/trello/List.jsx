@@ -3,6 +3,7 @@ import Card from "./Card"
 import { useContext, useState } from "react"
 import { TrelloContext } from "../context/TrelloContextProvider"
 import toast from "react-hot-toast"
+import AddUpdateField from "./AddUpdateField"
 
 function List(_props) {
      const { head, cards, listId } = _props
@@ -76,18 +77,15 @@ function List(_props) {
                               <Card title={card.value} listId={listId} cardId={card.id} key={card.id} />
                          )}
                          {isCardAdding ?
-                              <div>
-                                   <textarea
-                                        onKeyDown={handleKeyDown}
-                                        placeholder="Enter Card Text"
-                                        value={cardText} onChange={e => setCardText(e.target.value)}
-                                        className="w-full rounded p-2 text-sm mb-1 outline-none border border-gray-300 focus:border-black"
-                                   ></textarea>
-                                   <div className="flex gap-2 items-center">
-                                        <div onClick={handleAddCard} className="text-white px-3 py-1 text-sm font-medium rounded bg-green-600 cursor-pointer">Add Card</div>
-                                        <div onClick={handleAddCardCancel} className="text-white px-3 py-1 text-sm font-medium rounded bg-red-600 cursor-pointer">Cancel</div>
-                                   </div>
-                              </div> :
+                              <AddUpdateField
+                                   btnText="Add Card"
+                                   placeholder="Enter Card Text"
+                                   fieldValue={cardText}
+                                   handleChange={val => setCardText(val)}
+                                   handleKeyDown={handleKeyDown}
+                                   handleAdd={handleAddCard}
+                                   handleCancel={handleAddCardCancel}
+                              /> :
                               <div
                                    onClick={() => setIsCardAdding(true)}
                                    className="card px-2 py-1 rounded flex gap-2 items-center text-gray-600 font-medium cursor-pointer transition-colors hover:bg-white/[0.4]"

@@ -3,6 +3,7 @@ import List from "../../components/trello/List"
 import { TrelloContext } from "../../components/context/TrelloContextProvider"
 import { PlusSignIcon } from "hugeicons-react"
 import toast from "react-hot-toast"
+import AddUpdateField from "../../components/trello/AddUpdateField"
 
 function Trello() {
      const { trelloMasterData, dispatch } = useContext(TrelloContext)
@@ -34,16 +35,15 @@ function Trello() {
                          )}
                          {isAdding ?
                               <div className="px-3 py-2 rounded min-w-72 w-72 bg-gray-200">
-                                   <textarea
-                                        onKeyDown={handleKeyDown}
+                                   <AddUpdateField
+                                        btnText="Add List"
                                         placeholder="Enter List Title"
-                                        value={listTitle} onChange={e => setListTitle(e.target.value)}
-                                        className="w-full rounded p-2 text-sm mb-1 outline-none border border-gray-300 focus:border-black"
-                                   ></textarea>
-                                   <div className="flex gap-2 items-center">
-                                        <div onClick={handleAddList} className="text-white px-3 py-1 text-sm font-medium rounded bg-green-600 cursor-pointer">Add List</div>
-                                        <div onClick={handleAddListCancel} className="text-white px-3 py-1 text-sm font-medium rounded bg-red-600 cursor-pointer">Cancel</div>
-                                   </div>
+                                        fieldValue={listTitle}
+                                        handleChange={val => setListTitle(val)}
+                                        handleKeyDown={handleKeyDown}
+                                        handleAdd={handleAddList}
+                                        handleCancel={handleAddListCancel}
+                                   />
                               </div> :
                               <div
                                    onClick={() => setAdding(true)}
