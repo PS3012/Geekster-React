@@ -18,8 +18,8 @@ import ImageGenerator from './pages/imageGenerator/ImageGenerator'
 import InfiniteScroll from './pages/infiniteScroll/InfiniteScroll'
 import Authentication from './pages/Authentication'
 import EmployeeManagement from './pages/employeeManagement/EmployeeManagement'
-import Trello from './pages/Trello/Trello'
 import TrelloContextProvider from './components/context/TrelloContextProvider'
+import Trello from './pages/trelloApp/Trello'
 import './App.css'
 
 function App() {
