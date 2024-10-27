@@ -20,6 +20,7 @@ import Authentication from './pages/Authentication'
 import EmployeeManagement from './pages/employeeManagement/EmployeeManagement'
 import TrelloContextProvider from './components/context/TrelloContextProvider'
 import Trello from './pages/trelloApp/Trello'
+import ReduxProject from './pages/reduxProject/ReduxProject'
 import './App.css'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/infinite-scroll' element={<InfiniteScroll />} />
           <Route path='/employee-management' element={<EmployeeManagement />} />
           <Route path='/trello' element={<Trello />} />
+          <Route path='/redux-project' element={<ReduxProject />} />
           <Route path='/auth' element={<Authentication />} />
         </Routes>
       </TrelloContextProvider>
