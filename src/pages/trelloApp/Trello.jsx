@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import List from "../../components/trello/List"
 import { TrelloContext } from "../../components/context/TrelloContextProvider"
 import { PlusSignIcon } from "hugeicons-react"
@@ -22,6 +22,12 @@ function Trello() {
           setAdding(false)
           setListTitle("")
      }
+     useEffect(() => {
+          document.title = "Trello"
+          return () => {
+               document.title = "React Project"
+          }
+     }, [])
      return (
           <>
 
