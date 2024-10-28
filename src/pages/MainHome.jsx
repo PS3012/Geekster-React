@@ -14,6 +14,7 @@ function MainHome() {
           { link: "/infinite-scroll", name: "Infinite Scroll" },
           { link: "/employee-management", name: "Employee Management" },
           { link: "/trello", name: "Trello" },
+          { link: "/redux-project", name: "Redux Project" },
      ]
      return (
           <>

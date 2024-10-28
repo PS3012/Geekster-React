@@ -1,4 +1,7 @@
 import { useEffect } from "react"
+import Header from "../../components/reduxProject/Header"
+import Sidebar from "../../components/reduxProject/Sidebar"
+import ContactTable from "../../components/reduxProject/ContactTable"
 
 function ReduxProject() {
      useEffect(() => {
@@ -9,6 +12,15 @@ function ReduxProject() {
      }, [])
      return (
           <>
+
+               <Header />
+
+               <div className="grid grid-cols-5" style={{ height: "calc(100vh - 56px)" }}>
+                    <Sidebar />
+                    <div className="col-span-4 h-full">
+                         <ContactTable />
+                    </div>
+               </div>
 
           </>
      )
