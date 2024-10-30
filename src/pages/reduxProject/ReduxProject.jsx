@@ -15,9 +15,9 @@ function ReduxProject() {
 
                <Header />
 
-               <div className="grid grid-cols-5" style={{ height: "calc(100vh - 56px)" }}>
+               <div className="grid grid-cols-4" style={{ height: "calc(100vh - 56px)" }}>
                     <Sidebar />
-                    <div className="col-span-4 h-full">
+                    <div className="col-span-3 h-full">
                          <ContactTable />
                     </div>
                </div>
