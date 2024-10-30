@@ -5,6 +5,7 @@ const contactSlice = createSlice({
   initialState: {
     contactsList: [],
     editableContactId: "",
+    showOnlyFav: false,
   },
   reducers: {
     addContact(state, action) {
@@ -38,6 +39,9 @@ const contactSlice = createSlice({
         state.editableContactId = "";
       }
     },
+    showOnlyFavourites(state, action) {
+      state.showOnlyFav = action.payload;
+    },
   },
 });
 
@@ -47,5 +51,6 @@ export const {
   deleteContact,
   favouriteContact,
   setEditableContactId,
+  showOnlyFavourites,
 } = contactSlice.actions;
 export default contactSlice.reducer;

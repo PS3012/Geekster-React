@@ -1,10 +1,16 @@
 import { Delete02Icon, FavouriteIcon, PencilEdit01Icon, UserCircleIcon } from "hugeicons-react"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteContact, favouriteContact, setEditableContactId } from "../../slices/contactSlice"
+import { useEffect, useState } from "react"
 
 function ContactTable() {
      const dispatch = useDispatch()
-     const { contactsList } = useSelector(state => state.contacts)
+     const { contactsList, showOnlyFav } = useSelector(state => state.contacts)
+     const [filteredList, setFilteredList] = useState([])
+     useEffect(() => {
+          setFilteredList([...contactsList])
+          if (showOnlyFav) setFilteredList(contactsList.filter(ele => ele.isFav))
+     }, [contactsList, showOnlyFav])
      const handleEditContact = (id) => dispatch(setEditableContactId(id))
      const handleFavouriteContact = (id) => dispatch(favouriteContact(id))
      const handleDeleteContact = (id) => dispatch(deleteContact(id))
@@ -43,7 +49,7 @@ function ContactTable() {
                               </tr>
                          </thead>
                          <tbody>
-                              {contactsList.map(contact =>
+                              {filteredList.map(contact =>
                                    <tr key={contact.id}>
                                         <td className="p-4 border-b border-blue-gray-50">
                                              <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
