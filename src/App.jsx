@@ -21,7 +21,10 @@ import EmployeeManagement from './pages/employeeManagement/EmployeeManagement'
 import TrelloContextProvider from './components/context/TrelloContextProvider'
 import Trello from './pages/trelloApp/Trello'
 import ReduxProject from './pages/reduxProject/ReduxProject'
+import DrivePanel from './pages/drive/DrivePanel'
+import SignIn from './pages/drive/SignIn'
 import './App.css'
+import DriveHome from './pages/drive/DriveHome'
 
 function App() {
   return (
@@ -49,6 +52,10 @@ function App() {
           <Route path='/employee-management' element={<EmployeeManagement />} />
           <Route path='/trello' element={<Trello />} />
           <Route path='/redux-project' element={<ReduxProject />} />
+          <Route path='/drive' element={<DrivePanel />}>
+            <Route path='' element={<DriveHome />} />
+            <Route path='signIn' element={<SignIn />} />
+          </Route>
           <Route path='/auth' element={<Authentication />} />
         </Routes>
       </TrelloContextProvider>
