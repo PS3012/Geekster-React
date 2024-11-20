@@ -16,6 +16,7 @@ function MainHome() {
           { link: "/trello", name: "Trello" },
           { link: "/redux-project", name: "Redux Project" },
           { link: "/drive", name: "Drive" },
+          { link: "/word-matching", name: "Word Matching" },
      ]
      return (
           <>

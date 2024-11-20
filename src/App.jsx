@@ -25,6 +25,7 @@ import DrivePanel from './pages/drive/DrivePanel'
 import SignIn from './pages/drive/SignIn'
 import './App.css'
 import DriveHome from './pages/drive/DriveHome'
+import WordMatching from './pages/wordMatching/WordMatching'
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             <Route path='' element={<DriveHome />} />
             <Route path='signIn' element={<SignIn />} />
           </Route>
+          <Route path='/word-matching' element={<WordMatching />} />
           <Route path='/auth' element={<Authentication />} />
         </Routes>
       </TrelloContextProvider>
