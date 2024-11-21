@@ -1,57 +1,43 @@
 import { ArrowDown01Icon, ArrowUp01Icon } from "hugeicons-react";
 import { useEffect, useState } from "react";
-import { randomWords } from "./data"; // Import random words
+import { randomWords } from "./data";
 
 function WordMatching() {
      const [isOpen, setIsOpen] = useState(false);
-     const [groupSize, setGroupSize] = useState(2); // Group size for matching
-     const [itemCount, setItemCount] = useState(8); // Number of words to display
-     const [columns, setColumns] = useState(4); // Columns for layout
-     const [attempts, setAttempts] = useState(0); // Number of attempts
-     const [selectedWords, setSelectedWords] = useState([]); // Words selected by the user
-     const [matchedWords, setMatchedWords] = useState([]); // Words that are matched
-     const [words, setWords] = useState([]); // Words to be displayed
-     const [error, setError] = useState(false); // Error flag
-
-     // Toggle dropdown
+     const [groupSize, setGroupSize] = useState(2);
+     const [itemCount, setItemCount] = useState(8);
+     const [columns, setColumns] = useState(4);
+     const [attempts, setAttempts] = useState(0);
+     const [selectedWords, setSelectedWords] = useState([]);
+     const [matchedWords, setMatchedWords] = useState([]);
+     const [words, setWords] = useState([]);
+     const [error, setError] = useState(false);
      const toggleDropdown = () => setIsOpen(!isOpen);
-
-     // Shuffle array for random order
      const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
-
-     // Handle word click
      const handleWordClick = (word) => {
-          if (matchedWords.includes(word.word) || selectedWords.includes(word)) return; // Ignore if already selected or matched
-
+          if (matchedWords.includes(word.word) || selectedWords.includes(word)) return;
           const newSelection = [...selectedWords, word];
-
           if (newSelection.length === groupSize) {
-               // Check if all selected words form a valid match group
                const isValid = newSelection.every((selectedWord) =>
                     newSelection.every((w) => selectedWord.matches.includes(w.word) || selectedWord.word === w.word)
                );
-
                setAttempts((prev) => prev + 1);
-
                if (isValid) {
                     setMatchedWords((prev) => [
                          ...prev,
                          ...newSelection.map((w) => w.word),
                     ]);
                } else {
-                    // Indicate error and reset after 500ms
                     setError(true);
                     setTimeout(() => {
                          setError(false);
-                         setSelectedWords([]); // Reset selection
+                         setSelectedWords([]);
                     }, 500);
                }
           } else {
-               setSelectedWords(newSelection); // Add word to selection
+               setSelectedWords(newSelection);
           }
      };
-
-     // Reset game logic
      const handleReset = () => {
           const filteredWords = shuffleArray(
                randomWords.filter((word) =>
@@ -61,12 +47,10 @@ function WordMatching() {
                )
           ).slice(0, itemCount * groupSize);
           setWords(filteredWords);
-          setMatchedWords([]); // Clear matched words
-          setSelectedWords([]); // Clear selected words
-          setAttempts(0); // Reset attempts
+          setMatchedWords([]);
+          setSelectedWords([]);
+          setAttempts(0);
      };
-
-     // Effect to set words when groupSize or itemCount changes
      useEffect(() => {
           const filteredWords = shuffleArray(
                randomWords.filter((word) =>
@@ -76,8 +60,8 @@ function WordMatching() {
                )
           ).slice(0, itemCount * groupSize);
           setWords(filteredWords);
-          setMatchedWords([]); // Reset matched words
-          setSelectedWords([]); // Reset selected words
+          setMatchedWords([]);
+          setSelectedWords([]);
      }, [groupSize, itemCount]);
 
      useEffect(() => {
